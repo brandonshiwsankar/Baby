@@ -1,0 +1,54 @@
+<! name:Brandon shiwsanakr
+Student number: 301068399
+Date: 9/8/2020
+file name: contact
+>
+
+<%- include partials/header.ejs %>
+
+<%- include partials/main_nav.ejs %>
+<style>
+    body{
+        background: lightblue;
+    }
+</style>
+
+  <main class="container" style="width: 980px; height: 980px">
+      <div>
+          <h1 class="display-4" style="text-align: center"><%= title %></h1>
+        </div>
+        <div style=" border: 2px solid lightslategray">
+        <form action="mailto:brandon.shiwsankar@gmail.com" method="post">
+
+                <table style="width: 100%">
+                    <tr>
+                        <td class="fleidLable">First Name:</td>
+                        <td><input name="txtFirstName" size="25" tabindex="1" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="fleidLable">Last Name:</td>
+                        <td><input name="txtLastName" size="25" tabindex="3" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="fleidLable">Email:</td>
+                        <td><input name="txtEmail" size="30" tabindex="5" type="text"></td>
+                    </tr>
+                    <tr>
+                        <td class="fleidLable">Message:</td>
+                        <td>
+                        <textarea cols="40" name="txtSpecialRequests" rows="5" tabindex="39">---Message---</textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="fleidLable">
+                        <input name="btnSubmit" tabindex="41" type="submit" value="Send"></td>
+                        <td><input name="btnReset" tabindex="43" type="reset" value="Clear"></td>
+                    </tr>
+                </table>
+            
+            </form>
+        </div>
+  </main>
+
+<%- include partials/bottom_nav.ejs %>
+
+<%- include partials/footer.ejs %>
