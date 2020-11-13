@@ -1,13 +1,14 @@
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
-const surveyContacts = require('../models/survey');
+const survey = require('../models/survey');
 
 // create a reference to the model
 let Survey = require('../models/survey');
+let Question = require('../models/question');
 
-module.exports.displayContactsList = (req, res, next) => {
-    Survey.find((err, surveyContacts) => {
+module.exports.displaySurveyList = (req, res, next) => {
+    Survey.find((err, survey) => {
         if(err)
         {
             return console.error(err);
@@ -16,7 +17,7 @@ module.exports.displayContactsList = (req, res, next) => {
         {
             res.render('survey/list', 
             {title: 'Surveys', 
-            SurveyList: surveyContacts,
+            SurveyList: survey,
             displayName: req. user ? req.user.displayName: ''})            
         }
     });
@@ -31,8 +32,11 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newSurvey = Survey({
         "name": req.body.name,
-        "number": req.body.number,
-        "email": req.body.email
+        "author": req.body.author,
+        "email": req.body.email,
+        "question1":req.body.question1,
+        "question2":req.body.question2,
+        "question3":req.body.question3
     });
 
     Survey.create(newSurvey, (err, Survey) =>{
@@ -43,7 +47,7 @@ module.exports.processAddPage = (req, res, next) => {
         }
         else
         {
-            //refresh the book list
+            //refresh the survey list
             res.redirect('/survey');
         }
     });
@@ -62,7 +66,7 @@ module.exports.displayEditPage = (req, res, next) => {
         else
         {
             //show the edit view
-            res.render('survey/edit', {title: 'Edit an existing Survey', surveyContacts: surveyToEdit,
+            res.render('survey/edit', {title: 'Edit an existing Survey', survey: surveyToEdit,
             displayName: req. user ? req.user.displayName: ''})
         }
     });
@@ -74,8 +78,11 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedSurvey = Survey ({
         "_id": id,
         "name": req.body.name,
-        "number": req.body.number,
+        "author": req.body.author,
         "email": req.body.email,
+        "question1":req.body.question1,
+        "question2":req.body.question2,
+        "question3":req.body.question3
         
     });
     

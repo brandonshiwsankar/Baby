@@ -2,53 +2,223 @@
 
 <%- include ../partials/main_nav.ejs %>
 
+<style type="text/css">
+    table {
+        border-collapse:collapse;
+    }
+    .tf{
+        border-bottom:0;
+    }
+</style>
+    
+    <!--<SCRIPT TYPE="text/javascript">
+        var num=1;
+        function addquestion(in_tbl_name)
+        {
+            var tbody = document.getElementById(in_tbl_name).getElementsByTagName("TBODY")[0];
+            var row1 = document.createElement("TR");
+            // create table cell 1
+            var td = document.createElement("TD")
+            td.setAttribute('colspan',5);
+            td.bgColor="#A7B8D4";
+            td.innerHTML = "<label id=\"question\" style=\"width:570; background-color:#A7B8D4; color:white;\">"+"Question "+num+"</label>";
+            row1.appendChild(td);
+            // add to count variable
+            num = parseInt(num) + 1;
+            // append row to table
+            tbody.appendChild(row1);
+        }
+        var count=1;
+        function addRow(in_tbl_name)
+        {
+            var tbody = document.getElementById(in_tbl_name).getElementsByTagName("TBODY")[0];
+            // create row
+            var row = document.createElement("TR");
+            var td1 = document.createElement("TD")
+
+            var strHtml1 = "<INPUT TYPE=\"text\" id=\"questionTextField\" name=\"question\" placeholder=\"Enter the question\" SIZE=\"30\" MAXLENGTH=\"255\" class=\"form-control\">";
+            td1.innerHTML=strHtml1;
+
+            // append data to row
+            row.appendChild(td1);
+            // add to count variable
+            count = parseInt(count) + 1;
+            // append row to table
+            tbody.appendChild(row);
+        }
+
+        function deleterow(tableID) {
+            var table = document.getElementById(tableID);
+            var rowCount = table.rows.length;
+            if (rowCount==3) {
+                return false;
+            }
+            else {
+                table.deleteRow(rowCount -1);
+                //num = parseInt(num) - 1;
+            }
+        }
+        /*var x=0;
+        function add() {
+            x++:
+            var addquestion = $(".question");
+            var add_button = $(".add_form_field");
+
+           // $(addquestion).append('<div><label type="text" name="mytext[]">Question\x\</label><a href="#" class="delete">Delete</a></div>');
+            $(addquestion).append('<div><input type="text" name="mytext[]"/><a href="#" class="delete">Delete</a></div>'); //add input box
+
+         }   
+
+        function delete(){
+            var addquestion = $(".question");
+            var add_button = $(".add_form_field");
+
+            $(wrapper).on("click", ".delete", function(e) {
+            e.preventDefault();
+            $(this).parent('div').remove();
+            x--;
+            })
+        }*/
+
+    </SCRIPT> -->
 
 <!-- Content for the Add Page -->
 <div class="container">
-    <div class="row">
-        <div class="offset-md-3 col-md-6">
-        <h1> Add a new Survey</h1>
 
-        <form class="form" method="POST">
-            <div class="form-group">
-                <label for="nameTextField">Full Name</label>
-                <input type="text" class="form-control"
-                id="nameTextField"
-                placeholder="Enter the Full Name of contact"
-                name="name" required>
-            </div>
+    <h1> Add a new Survey</h1>
 
-            <div class="form-group">
-                <label for="authorTextField">Phone Number</label>
-                <input type="text" class="form-control"
-                id="authorTextField"
-                placeholder="Enter the contact's phone number"
-                name="number" required>
-            </div>
+    <form id="" class="form" method="POST" width="580">
 
-            <div class="form-group">
-                <label for="publishedTextField">Email</label>
-                <input type="email" class="form-control"
-                id="publishedTextField"
-                placeholder="Enter the contact's email address"
-                name="email" required>
-            </div>
+        <TABLE ID="tbl"  cellspacing="0" cellpadding="3" lass="st">
 
-         
-         
-            
-            <button class="btn btn-primary" type="submit">
-                <i class="fas fa-edit"></i> Submit</button>
+            <tr>
+                <TH WIDTH="200 px">Survey Name
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    size="30"
+                    placeholder="Enter the survey Name"
+                    name="name" required>
+                </TH>
+                
+            </tr>
 
-                <a href="/survey" class="btn btn-warning">
-                    <i class="fas fa-undo"></i> Cancel</a>
+            <tr>
+                <TH WIDTH="200 px">Author 
+                    <input type="text" class="form-control"
+                    id="authorTextField"
+                    size="30"
+                    placeholder="Enter the author"
+                    name="author" required>
+                </TH>
+            </tr>
 
-        </form>
-    </div>
-    </div>
+            <tr>
+                <TH WIDTH="200 px">Email 
+                    <input type="email" class="form-control"
+                    id="publishedTextField"
+                    size="30"
+                    placeholder="Enter your email address"
+                    name="email" required>
+                </TH>
+            </tr>
+
+            <tr>
+                <TH WIDTH="200 px">Question1 
+                    <input type="text" class="form-control"
+                    id="publishedTextField"
+                    size="30"
+                    placeholder="Enter the your question"
+                    name="question1" required>
+                </TH>
+            </tr>
+
+            <tr>
+                <TH WIDTH="200 px">Question2 
+                    <input type="text" class="form-control"
+                    id="publishedTextField"
+                    size="30"
+                    placeholder="Enter the your question"
+                    name="question2" required>
+                </TH>
+            </tr>
+
+            <tr>
+                <TH WIDTH="200 px">Question3 
+                    <input type="text" class="form-control"
+                    id="publishedTextField"
+                    size="30"
+                    placeholder="Enter the your question"
+                    name="question3" required>
+                </TH>
+            </tr>
+
+            <!--<tr class="question">
+
+            </tr>
+
+            <p align="center">
+                <input type="button" onClick="addquestion('tbl')" VALUE="Add Question"> &nbsp;&nbsp;
+                <INPUT TYPE="Button" class="add_form_field" onClick="addRow('tbl')" VALUE="Add Row">&nbsp;&nbsp;
+                <INPUT TYPE="Button" onClick="deleterow('tbl')" VALUE="delete Row">
+            </p>&nbsp;&nbsp;-->
+
+        </TABLE>
+
+        <button class="btn btn-primary" type="submit">
+        <i class="fas fa-edit"></i> Submit</button>
+
+        <a href="/survey" class="btn btn-warning">
+        <i class="fas fa-undo"></i> Cancel</a>
+
+    </form>
 </div>
 
 
+   <!-- <div class="row">
+            <div class="offset-md-3 col-md-6">
+            <h1> Add a new Survey</h1>
+                
+            <p align="center">
+                <input type="button" onClick="addmodule('tbl')" VALUE="Add Module"> &nbsp;&nbsp;
+                <INPUT TYPE="Button" onClick="addRow('tbl')" VALUE="Add Row">&nbsp;&nbsp;
+                <INPUT TYPE="Button" onClick="deleterow('tbl')" VALUE="delete Row">    
+            </p>&nbsp;&nbsp;
+
+            <form class="form" method="POST">
+                <div class="form-group">
+                    <label for="nameTextField">Name</label>
+                    <input type="text" class="form-control"
+                    id="nameTextField"
+                    placeholder="Enter the survey Name"
+                    name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="authorTextField">Author</label>
+                    <input type="text" class="form-control"
+                    id="authorTextField"
+                    placeholder="Enter the author"
+                    name="author" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="publishedTextField">Email</label>
+                    <input type="email" class="form-control"
+                    id="publishedTextField"
+                    placeholder="Enter the contact's email address"
+                    name="email" required>
+                </div>
+
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit</button>
+
+                    <a href="/survey" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>
+
+            </form>
+            </div>
+        </div> 
+    </div>-->
 
 <%- include ../partials/bottom_nav.ejs %>
 

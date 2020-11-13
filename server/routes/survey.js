@@ -21,8 +21,8 @@ function requireAuth(req,res,next)
     next();
 }
 
-/* GET Route for the Contact List page - READ OPeration */
-router.get('/', surveyController.displayContactsList);
+/* GET Route for the Survey List page - READ OPeration */
+router.get('/', surveyController.displaySurveyList);
 
 /* GET route for displaying Add page - CREATE Operation */
 router.get('/add', requireAuth, surveyController.displayAddPage);

@@ -10,22 +10,22 @@
 
         <form class="form" method="POST">
             <div class="form-group">
-                <label for="nameTextField">Full Name</label>
+                <label for="nameTextField">Survey Name</label>
                 <input type="text" class="form-control"
                 id="nameTextField"
-                placeholder="Enter the contacts full name"
+                placeholder="Enter the survey name"
                 name="name" 
-                value="<%= businessContacts.name %>"
+                value="<%= survey.name %>"
                 required>
             </div>
 
             <div class="form-group">
-                <label for="phonenumberTextField">Phone Number</label>
+                <label for="authorTextField">Author</label>
                 <input type="text" class="form-control"
-                id="phonenumberTextField"
-                placeholder="Enter the contacts phone number"
-                name="number" 
-                value="<%= businessContacts.number %>"
+                id="authorTextField"
+                placeholder="Enter the your name"
+                name="author" 
+                value="<%= survey.author %>"
                 required>
             </div>
 
@@ -35,7 +35,37 @@
                 id="emailTextField"
                 placeholder="Enter the contacts email address"
                 name="email" 
-                value="<%= businessContacts.email %>"
+                value="<%= survey.email %>"
+                required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailTextField">Question1</label>
+                <input type="text" class="form-control"
+                id="emailTextField"
+                placeholder="Enter question"
+                name="question1" 
+                value="<%= survey.question1 %>"
+                required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailTextField">Question2</label>
+                <input type="text" class="form-control"
+                id="emailTextField"
+                placeholder="Enter question"
+                name="question2" 
+                value="<%= survey.question2 %>"
+                required>
+            </div>
+
+            <div class="form-group">
+                <label for="emailTextField">Question3</label>
+                <input type="text" class="form-control"
+                id="emailTextField"
+                placeholder="Enter question"
+                name="question3" 
+                value="<%= survey.question3 %>"
                 required>
             </div>
 
