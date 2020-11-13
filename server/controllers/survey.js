@@ -31,7 +31,7 @@ module.exports.displayAddPage = (req, res, next) => {
 module.exports.processAddPage = (req, res, next) => {
     let newSurvey = Survey({
         "name": req.body.name,
-        "number": req.body.number,
+        "author": req.body.author,
         "email": req.body.email
     });
 
@@ -74,7 +74,7 @@ module.exports.processEditPage = (req, res, next) => {
     let updatedSurvey = Survey ({
         "_id": id,
         "name": req.body.name,
-        "number": req.body.number,
+        "author": req.body.author,
         "email": req.body.email,
         
     });

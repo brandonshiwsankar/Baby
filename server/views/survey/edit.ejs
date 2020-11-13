@@ -10,22 +10,22 @@
 
         <form class="form" method="POST">
             <div class="form-group">
-                <label for="nameTextField">Full Name</label>
+                <label for="nameTextField">Survey name</label>
                 <input type="text" class="form-control"
                 id="nameTextField"
                 placeholder="Enter the contacts full name"
                 name="name" 
-                value="<%= businessContacts.name %>"
+                value="<%= surveyContacts.name %>"
                 required>
             </div>
 
             <div class="form-group">
-                <label for="phonenumberTextField">Phone Number</label>
+                <label for="phonenumberTextField">Your name</label>
                 <input type="text" class="form-control"
                 id="phonenumberTextField"
                 placeholder="Enter the contacts phone number"
-                name="number" 
-                value="<%= businessContacts.number %>"
+                name="author" 
+                value="<%= surveyContacts.author %>" 
                 required>
             </div>
 
@@ -35,7 +35,7 @@
                 id="emailTextField"
                 placeholder="Enter the contacts email address"
                 name="email" 
-                value="<%= businessContacts.email %>"
+                value="<%= surveyContacts.email %>"
                 required>
             </div>
 
