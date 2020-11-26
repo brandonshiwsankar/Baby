@@ -8,35 +8,39 @@ file name: contact
 
 <%- include partials/main_nav.ejs %>
 <style>
-    body{
-        background: lightblue;
+    body {
+        background: #F4F4EA;
     }
+   
+    
 </style>
-
+ 
   <main class="container" style="width: 980px; height: 980px">
+    <div class="jumbotron">
       <div>
           <h1 class="display-4" style="text-align: center"><%= title %></h1>
         </div>
-        <div style=" border: 2px solid lightslategray">
+        
+        <div style=" border: 2px solid rgb(67, 76, 78)" class="center">
         <form action="mailto:brandon.shiwsankar@gmail.com" method="post">
 
-                <table style="width: 100%">
+                <table style="width: 100%" >
                     <tr>
-                        <td class="fleidLable">First Name:</td>
-                        <td><input name="txtFirstName" size="25" tabindex="1" type="text"></td>
+                        <td class="fleidLable"  style = "text-align: center;" >First Name:</td>
+                        <td><input name="txtFirstName" size="25" tabindex="1" type="text" style = "text-align: left;"></td>
                     </tr>
                     <tr>
-                        <td class="fleidLable">Last Name:</td>
-                        <td><input name="txtLastName" size="25" tabindex="3" type="text"></td>
+                        <td class="fleidLable" style = "text-align: center;">Last Name:</td>
+                        <td><input name="txtLastName" size="25" tabindex="3" type="text"style = "text-align: left;"></td>
                     </tr>
                     <tr>
-                        <td class="fleidLable">Email:</td>
-                        <td><input name="txtEmail" size="30" tabindex="5" type="text"></td>
+                        <td class="fleidLable" style = "text-align: center;">Email:</td>
+                        <td><input name="txtEmail" size="30" tabindex="5" type="text"style = "text-align: left;"></td>
                     </tr>
                     <tr>
-                        <td class="fleidLable">Message:</td>
+                        <td class="fleidLable" style = "text-align: center;">Message:</td>
                         <td>
-                        <textarea cols="40" name="txtSpecialRequests" rows="5" tabindex="39">---Message---</textarea></td>
+                        <textarea cols="40" name="txtSpecialRequests" rows="5" tabindex="39"style = "text-align: left;">---Message---</textarea></td>
                     </tr>
                     <tr>
                         <td class="fleidLable">
@@ -47,6 +51,7 @@ file name: contact
             
             </form>
         </div>
+    </div>
   </main>
 
 <%- include partials/bottom_nav.ejs %>
