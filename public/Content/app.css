@@ -12,7 +12,16 @@
     text-align: center;
     vertical-align: middle;
     widows: 230px;
-    
-
-
 }
+
+#main {
+    overflow:auto;
+   
+  }
+  
+  .footer {
+    position: relative;
+    
+    clear:both;
+    padding-top:20px;
+  } 

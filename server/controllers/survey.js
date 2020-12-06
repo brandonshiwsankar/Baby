@@ -36,7 +36,10 @@ module.exports.processAddPage = (req, res, next) => {
         "email": req.body.email,
         "question1":req.body.question1,
         "question2":req.body.question2,
-        "question3":req.body.question3
+        "question3":req.body.question3,
+        "question4":req.body.question4,
+        "question5":req.body.question5
+
     });
 
     Survey.create(newSurvey, (err, Survey) =>{
@@ -82,7 +85,9 @@ module.exports.processEditPage = (req, res, next) => {
         "email": req.body.email,
         "question1":req.body.question1,
         "question2":req.body.question2,
-        "question3":req.body.question3
+        "question3":req.body.question3,
+        "question4":req.body.question4,
+        "question5":req.body.question5
         
     });
     
